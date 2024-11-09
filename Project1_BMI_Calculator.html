@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator
+    </title>
+</head>
+<body>
+    <div class="container"><hr>
+        
+        <span><h1>BMI Calculator</h1></span>
+        <span id="sp1">Body Mass Index Calculator</span><br><br>
+    <span id="sp2">CypherX</span><br><br>
+    
+    <span id="batman">Height in cm :
+        <input type="text" placeholder="enter value" id="height" ><br><br>
+        Weight in Kgs:
+        <input type="text" placeholder="enter value" id="weight" ><br><br>
+        <button id="button">Submit</button><br><br>
+        <span id="result" ></span><br>
+    </span>
+    <button id="reset">Reset</button>
+    
+    </div>
+   <div > 
+   <span><hr><br><br></span><br><br><br><br><br><br><br><br><br><br>
+   
+    
+   <span id="S2"><hr><br><br></span> 
+</div>
+    
+    
+</body>
+<style>
+    .container  {
+        background-color: aliceblue;
+        padding: 10px;
+        text-align: center;
+        background-image: url('hacker.gif');
+
+
+    }
+    h1{
+        background-color: red;
+        padding: 10px;
+        border-radius: 10px;
+        border-color: rgb(0, 4, 255);
+        border-radius: 25px;
+        height: fit-content;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    #sp1 {
+        
+        font-weight: bold;
+        background-color: blanchedalmond;
+        padding: 25px  ;
+        border-radius: 10px;
+        height: fit-content;
+        font-size: 1.5rem;
+        color: black;
+        
+    }
+    #sp2 {
+        background-color: yellow;
+        padding: 4px  ;
+        height: fit-content;
+        font-size: 1.5rem;
+        border-radius: 10px;
+        color: black;
+    }
+    #batman {
+        margin-top: 60px;
+        color:aqua;
+        background-color: #414141;
+        padding: 4px;
+        
+
+
+    }
+    body {
+        background-color: #414141;
+        color: white;
+    }
+    #result {
+        background-color: #414141;
+        color: aqua;
+        padding: 5px;
+        border-radius: 10px;
+        height: fit-content;
+        margin-top: 10px;
+    }
+    #S1 {
+        background-color: rgb(255, 255, 255);
+        
+        
+        
+    }
+
+
+</style>
+<script>
+    const button = document.getElementById('button');
+    const height = document.getElementById('height');
+    const weight = document.getElementById('weight');
+   
+    
+    const result = document.getElementById('result')
+    button.addEventListener('click', function(e) {
+        e.preventDefault()
+         const heightval = height.value
+         const weightval = weight.value
+         const bmi = (weightval / (heightval*heightval)*10000).toFixed(2)
+        
+        result.innerHTML = `Your BMI is <span>${bmi}</span>` ;
+    })
+const reset = document.getElementById('reset');
+reset.addEventListener('click', function(e) {
+    
+    height.value = '';
+    weight.value = '';
+    result.innerHTML='';
+    
+})
+</script>
+</html>
